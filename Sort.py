@@ -55,3 +55,26 @@ class MergeSort(Sort):
       self.time = time.time() - self.time
 
       return aNew
+
+
+
+"""Module with the implementation of the BubbleSort algorithm."""
+
+class BubbleSort(Sort):
+  """Class that represents a BubbleSort implementation."""
+
+  def _sort(self):
+    a = self._items.copy()
+
+    self.time = time.time()
+
+    for i in range(len(a)-1):
+      for j in range(len(a)-i-1):
+        if a[j] > a[j+1]:
+          t = a[j]
+          a[j] = a[j+1]
+          a[j+1] = t
+
+    self.time = time.time() - self.time
+
+    return a

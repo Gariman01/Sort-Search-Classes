@@ -23,3 +23,17 @@ class Search(ABC):
 
     def _time(self):
         return self.time
+
+class LinearSearch(Search):
+
+  def _search(self, item):
+    flag = False
+    self.time = time.time()
+    for i, j in enumerate(self._items):
+      if j == item:
+        flag = True
+        self.time = time.time() - self.time
+        return i
+    if flag == False:
+      self.time = time.time() - self.time
+      return -1

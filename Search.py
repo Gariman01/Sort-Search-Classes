@@ -37,3 +37,25 @@ class LinearSearch(Search):
     if flag == False:
       self.time = time.time() - self.time
       return -1
+#Anmol
+class BinarySearch(Search):
+
+  def _search(self, item):
+
+    a = self._items.copy()
+    flag = False
+    self.time = time.time()
+
+    while len(a) > 0:
+      if a[len(a)//2] == item:
+        flag = True
+        self.time = time.time() - self.time
+        return len(a)//2
+      elif a[len(a)//2] > item:
+        a = a[:len(a)//2]
+      else:
+        a = a[len(a)//2 + 1 :]
+
+    if flag == False:
+      self.time = time.time() - self.time
+      return -1
